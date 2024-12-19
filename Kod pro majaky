@@ -66,7 +66,7 @@ try:
         if led_on:
             # Implementace jednotlivých režimů
             if mode == 2:
-                # Režim 2: Bliká podle původního kódu
+                # Režim 2: 
                 set_color(np1, 0, 0, 255)  # Modrá na pinu 1
                 set_color(np3, 0, 0, 255)  # Modrá na pinu 3
                 set_color(np2, 255, 0, 0)  # Červená na pinu 2
