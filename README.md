@@ -18,9 +18,13 @@ Mým cílem je vytvořit systém, který umožňuje řídit čtyři NeoPixel LED
 
 ## Aktuální stav:
 
-Základní mód je napsaný, zatím jen čtyři módy:   
+Základní kód je napsaný, zatím jen tři módy:   
                                                 -blikání modrá led pásek 1 a 3 a červená led pásek 2 a 4
 
                                                 -blikání čerená led pásek 1 a 3 a modrá led pásek 2 a 4
                                                 
                                                 -blikání červená led pásek 1 a 2 a modrá led pásek 3 a 4
+
+Zapojení na breadboardu (jen dva led pásky, další dva led pásky mi nefungují, protože mi shořeli):
+
+
