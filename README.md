@@ -10,7 +10,7 @@ Třída: T3A
 
 ## O co se jedná
 
-Tento projekt se zaměřuje na ovládání čtyř NeoPixel LED pásků pomocí mikrokontroléru Raspberry Pi Pico, a dvou tlačítek. Použil jsem čtyři led pásky WS2812B a dvě tlačítka.
+Tento projekt se zaměřuje na ovládání čtyř NeoPixel LED pásků pomocí mikrokontroléru Raspberry Pi Pico, a dvou tlačítek. Použil jsem čtyři neopixelové led pásky WS2812B a dvě tlačítka.
 
 ## Cíl
 
@@ -19,12 +19,15 @@ Mým cílem je vytvořit systém, který umožňuje řídit čtyři NeoPixel LED
 ## Aktuální stav:
 
 Základní kód je napsaný, zatím jen tři módy:   
-                                                -blikání modrá led pásek 1 a 3 a červená led pásek 2 a 4
 
+                                                -blikání modrá led pásek 1 a 3 a červená led pásek 2 a 4
+                                                
                                                 -blikání čerená led pásek 1 a 3 a modrá led pásek 2 a 4
                                                 
                                                 -blikání červená led pásek 1 a 2 a modrá led pásek 3 a 4
 
-Zapojení na breadboardu (jen dva led pásky, další dva led pásky mi nefungují, protože mi shořeli):
+Zapojení na breadboardu (jen dva led pásky a bez tlačítek- z první verze, kde jsem zkoušel jak led pásky fungují):
 
 ![IMG_1019](https://github.com/user-attachments/assets/9fbe8bbf-74a1-47d9-9879-b721da2939d6)
+
+Led pásky připravené na instalaci do auta (jen dva, protože mi dva nefungují, protože shořeli): 
