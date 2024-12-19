@@ -1,0 +1,121 @@
+import machine
+import neopixel
+import time
+
+# Nastavení pinů pro LED pásky
+LED_PIN_1 = 0  # GPIO pin pro data první N	eoPixel pásky (modrá)
+LED_PIN_2 = 1  # GPIO pin pro data druhé NeoPixel pásky (červená)
+LED_PIN_3 = 2  # GPIO pin pro data třetí NeoPixel pásky (modrá)
+LED_PIN_4 = 3  # GPIO pin pro data čtvrté NeoPixel pásky (červená)
+BUTTON_PIN_MODE = 5  # GPIO pin pro tlačítko pro přepínání režimů
+BUTTON_PIN_ON_OFF = 6  # GPIO pin pro tlačítko pro zapnutí/vypnutí
+NUM_LEDS = 8  # Počet LED na každé pásce
+
+# Inicializace NeoPixel pásků
+np1 = neopixel.NeoPixel(machine.Pin(LED_PIN_1), NUM_LEDS)
+np2 = neopixel.NeoPixel(machine.Pin(LED_PIN_2), NUM_LEDS)
+np3 = neopixel.NeoPixel(machine.Pin(LED_PIN_3), NUM_LEDS)
+np4 = neopixel.NeoPixel(machine.Pin(LED_PIN_4), NUM_LEDS)
+
+# Inicializace tlačítek
+button_mode = machine.Pin(BUTTON_PIN_MODE, machine.Pin.IN, machine.Pin.PULL_UP)
+button_on_off = machine.Pin(BUTTON_PIN_ON_OFF, machine.Pin.IN, machine.Pin.PULL_UP)
+
+# Funkce pro nastavení všech LED na jednu barvu
+def set_color(np, r, g, b, brightness=0.5):
+    """Nastaví barvu pro všechny LED na pásce."""
+    for i in range(NUM_LEDS):
+        np[i] = (int(r * brightness), int(g * brightness), int(b * brightness))
+    np.write()
+
+# Funkce pro detekci stisku tlačítka
+def button_pressed(button):
+    """Vrátí True, pokud bylo tlačítko stisknuto (aktivní nízký signál)."""
+    return not button.value()
+
+# Hlavní smyčka pro blikání LED pásků
+mode = 2  # Začínáme v režimu 2 (blikání)
+led_on = False  # LED pásky začínají vypnuté
+last_button_mode_state = 1  # Poslední stav tlačítka pro přepínání režimů
+last_button_on_off_state = 1  # Poslední stav tlačítka pro zapnutí/vypnutí
+
+button_press_time = time.ticks_ms()  # Čas posledního stisku tlačítka
+
+try:
+    while True:
+        current_button_mode_state = button_mode.value()
+        current_button_on_off_state = button_on_off.value()
+        
+        # Detekce stisku tlačítka pro přepínání režimu
+        if last_button_mode_state == 1 and current_button_mode_state == 0:
+            # Když je tlačítko stisknuto, změníme režim, ale nikdy nevrátíme na "vypnuto"
+            mode = mode % 4 + 1
+            if mode == 1:  # Pokud bychom se dostali na režim 1 (vypnuto), přepneme na režim 2
+                mode = 2
+            time.sleep(0.1)  # Krátké zpoždění pro debouncing
+
+        # Detekce stisku tlačítka pro zapnutí/vypnutí
+        if last_button_on_off_state == 1 and current_button_on_off_state == 0:
+            # Pokud je tlačítko pro zapnutí/vypnutí stisknuto
+            led_on = not led_on  # Přepneme stav LED
+            time.sleep(0.1)  # Krátké zpoždění pro debouncing
+        
+        last_button_mode_state = current_button_mode_state  # Uložíme aktuální stav tlačítka pro režimy
+        last_button_on_off_state = current_button_on_off_state  # Uložíme aktuální stav tlačítka pro zapnutí/vypnutí
+
+        if led_on:
+            # Implementace jednotlivých režimů
+            if mode == 2:
+                # Režim 2: Bliká podle původního kódu
+                set_color(np1, 0, 0, 255)  # Modrá na pinu 1
+                set_color(np3, 0, 0, 255)  # Modrá na pinu 3
+                set_color(np2, 255, 0, 0)  # Červená na pinu 2
+                set_color(np4, 255, 0, 0)  # Červená na pinu 4
+                time.sleep(0.1)
+                set_color(np1, 0, 0, 0)    # Vypnutí pinu 1
+                set_color(np3, 0, 0, 0)    # Vypnutí pinu 3
+                set_color(np2, 0, 0, 0)    # Vypnutí pinu 2
+                set_color(np4, 0, 0, 0)    # Vypnutí pinu 4
+                time.sleep(0.1)
+                
+            elif mode == 3:
+                # Režim 3: Červená na pinech 1 a 4, modrá na pinech 2 a 3
+                set_color(np1, 255, 0, 0)  # Červená na pinu 1
+                set_color(np4, 255, 0, 0)  # Červená na pinu 4
+                set_color(np2, 0, 0, 255)  # Modrá na pinu 2
+                set_color(np3, 0, 0, 255)  # Modrá na pinu 3
+                time.sleep(0.1)
+                set_color(np1, 0, 0, 0)    # Vypnutí pinu 1
+                set_color(np2, 0, 0, 0)    # Vypnutí pinu 2
+                set_color(np3, 0, 0, 0)    # Vypnutí pinu 3
+                set_color(np4, 0, 0, 0)    # Vypnutí pinu 4
+                time.sleep(0.1)
+
+            elif mode == 4:
+                # Režim 4: Modrá na pinech 1 a 2, červená na pinech 3 a 4
+                set_color(np1, 0, 0, 255)  # Modrá na pinu 1
+                set_color(np2, 0, 0, 255)  # Modrá na pinu 2
+                set_color(np3, 255, 0, 0)  # Červená na pinu 3
+                set_color(np4, 255, 0, 0)  # Červená na pinu 4
+                time.sleep(0.1)
+                set_color(np1, 0, 0, 0)    # Vypnutí pinu 1
+                set_color(np2, 0, 0, 0)    # Vypnutí pinu 2
+                set_color(np3, 0, 0, 0)    # Vypnutí pinu 3
+                set_color(np4, 0, 0, 0)    # Vypnutí pinu 4
+                time.sleep(0.1)
+
+
+        else:
+            # Vypnutí všech LED, když je režim vypnutý
+            set_color(np1, 0, 0, 0)
+            set_color(np2, 0, 0, 0)
+            set_color(np3, 0, 0, 0)
+            set_color(np4, 0, 0, 0)
+
+except KeyboardInterrupt:
+    # Vypnutí LED při ukončení programu
+    set_color(np1, 0, 0, 0)
+    set_color(np2, 0, 0, 0)
+    set_color(np3, 0, 0, 0)
+    set_color(np4, 0, 0, 0)
+
