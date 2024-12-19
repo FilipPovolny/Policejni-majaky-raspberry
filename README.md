@@ -1,4 +1,4 @@
-![IMG_1019](https://github.com/user-attachments/assets/9fbe8bbf-74a1-47d9-9879-b721da2939d6)![IMG_1019](https://github.com/user-attachments/assets/4e5d0274-4814-436e-972b-7d080b899835)# Policejní majáky- Raspberry pi pico wh
+# Policejní majáky- Raspberry pi pico wh
 
 ## Informace: 
 
@@ -27,4 +27,4 @@ Základní kód je napsaný, zatím jen tři módy:
 
 Zapojení na breadboardu (jen dva led pásky, další dva led pásky mi nefungují, protože mi shořeli):
 
-
+![IMG_1019](https://github.com/user-attachments/assets/9fbe8bbf-74a1-47d9-9879-b721da2939d6)
