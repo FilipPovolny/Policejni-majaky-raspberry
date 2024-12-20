@@ -56,7 +56,10 @@ Led pásky připravené na instalaci do auta (jen dva, protože mi dva nefunguj�
 # Popis:
 1. Zkoušel jsem jestli led pásky fungují a jak fungují
 2. Zkusil jsem naprogramovat jednoduché blikání: Dostupné z: https://github.com/FilipPovolny/Policejni-majaky-raspberry/blob/main/Prvni%20kod.
-3. Naprogramoval jsem aktuální kód:
+3. Naprogramoval jsem aktuální kód: https://github.com/FilipPovolny/Policejni-majaky-raspberry/blob/main/Kod%20pro%20majaky
+4. Napájel jsem led pásky na delší kabely
+5. Zkontroloval jsem jestli mi led pásky fungují a prřestali mi dva fungovat
+
 
 ## Schéma zapojení: 
 
