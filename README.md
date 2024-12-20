@@ -44,4 +44,20 @@ Zapojení na breadboardu (jen dva led pásky a bez tlačítek- z první verze, k
 
 ![IMG_1019](https://github.com/user-attachments/assets/9fbe8bbf-74a1-47d9-9879-b721da2939d6)
 
+Zkoušení jak majáky blikají:
+
+https://github.com/user-attachments/assets/9053972b-640d-48e0-ab2d-deb96a53a766
+
 Led pásky připravené na instalaci do auta (jen dva, protože mi dva nefungují, protože shořeli): 
+
+![IMG_1030](https://github.com/user-attachments/assets/ad3b9ced-bb54-436e-a345-7c3a08fa5a74)
+
+![IMG_1032](https://github.com/user-attachments/assets/d746d139-b02b-4d9d-9d96-3c06f60f6dce)
+# Popis:
+1. Zkoušel jsem jestli led pásky fungují a jak fungují
+2. Zkusil jsem naprogramovat jednoduché blikání
+3. Naprogramoval jsem aktuální kód viz.:
+
+## Schéma zapojení: 
+
+![Snímek obrazovky (134)](https://github.com/user-attachments/assets/fe4ec755-6786-4e0a-b681-79d3a7bd5de7)
