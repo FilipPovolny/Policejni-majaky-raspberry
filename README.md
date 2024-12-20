@@ -16,6 +16,11 @@ Tento projekt se zaměřuje na ovládání čtyř NeoPixel LED pásků pomocí m
 
 Mým cílem je vytvořit systém, který umožňuje řídit čtyři NeoPixel LED pásky připojené k mikrokontroléru, přičemž tento systém ovládám pomocí dvou tlačítek. Tato tlačítka slouží k přepínání mezi různými režimy svícení LED pásků a také k zapínání a vypínání celého systému LED pásků. Každý LED pásek je připojen k jinému GPIO pinu, což umožňuje nezávislé řízení každého pásku. Režimy ovládání zahrnují různé vzory svícení, například blikání LED nebo pevné barvy, které se střídají mezi modrou a červenou na různých pásech. První tlačítko slouží k přepínání mezi těmito režimy, přičemž režimy mění způsob svícení LED pásků podle specifických vzorců. Druhé tlačítko slouží k zapnutí nebo vypnutí celého systému, což umožňuje snadnou kontrolu, zda LED pásky budou svítit, nebo zda budou zcela vypnuté. Celkovým cílem je vytvořit jednoduchý a intuitivní systém pro ovládání světelných efektů, který je ovládán dvěma tlačítky, a to bez potřeby složitějšího uživatelského rozhraní. Tento systém je ideální pro aplikace, kde je potřeba měnit osvětlení a dynamiku barev podle aktuálních potřeb.
 
+## Použité komponenty: 
+
+[Uploading ledpasek.webp…]()
+
+
 ## Aktuální stav:
 
 Základní kód je napsaný, zatím jen tři módy:   
