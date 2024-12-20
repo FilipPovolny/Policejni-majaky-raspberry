@@ -1,1 +1,30 @@
+import machine
+import neopixel
+import time
 
+# Nastavení pinu a počtu LED
+LED_PIN = 0  # GPIO pin pro data NeoPixel pásku
+NUM_LEDS = 8  # Počet LED na pásku
+
+# Inicializace NeoPixel pásku
+np = neopixel.NeoPixel(machine.Pin(LED_PIN), NUM_LEDS)
+
+# Funkce pro nastavení všech LED na jednu barvu
+def set_color(r, g, b, brightness=0.5):
+    """Nastaví barvu pro všechny LED."""
+    for i in range(NUM_LEDS):
+        np[i] = (int(r * brightness), int(g * brightness), int(b * brightness))
+    np.write()
+
+# Hlavní smyčka pro změnu barev
+try:
+    while True:
+        set_color(255, 0, 0)  # Červená
+        time.sleep(1)
+        set_color(0, 255, 0)  # Zelená
+        time.sleep(1)
+        set_color(0, 0, 255)  # Modrá
+        time.sleep(1)
+except KeyboardInterrupt:
+    # Vypnutí LED při ukončení programu
+    set_color(0, 0, 0)
