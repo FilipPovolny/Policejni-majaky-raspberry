@@ -18,7 +18,6 @@ Mým cílem je vytvořit systém, který umožňuje řídit čtyři NeoPixel LED
 
 ## Použité komponenty: 
 
-[Uploading ledpasek.webp…]()
 
 
 ## Aktuální stav:
