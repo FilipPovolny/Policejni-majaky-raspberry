@@ -18,6 +18,7 @@ Mým cílem je vytvořit systém, který umožňuje řídit čtyři NeoPixel LED
 
 ## Použité komponenty: 
 
+![ledpasek](https://github.com/user-attachments/assets/9fbe8bbf-74a1-47d9-9879-b721da2939d6)
 
 
 ## Aktuální stav:
