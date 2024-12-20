@@ -18,7 +18,7 @@ Mým cílem je vytvořit systém, který umožňuje řídit čtyři NeoPixel LED
 
 ## Použité komponenty: 
 
-![ledpasek]https://github.com/FilipPovolny/Policejni-majaky-raspberry/blob/main/ledpasek.webp
+
 
 
 ## Aktuální stav:
