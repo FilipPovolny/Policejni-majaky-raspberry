@@ -64,3 +64,8 @@ Led pásky připravené na instalaci do auta (jen dva, protože mi dva nefunguj�
 ## Schéma zapojení: 
 
 ![Snímek obrazovky (134)](https://github.com/user-attachments/assets/fe4ec755-6786-4e0a-b681-79d3a7bd5de7)
+
+
+## Citace:
+
+Adafruit guide. Online. Dostupné z: https://learn.adafruit.com/adafruit-neopixel-uberguide/the-magic-of-neopixels. [cit. 2025-01-06].
