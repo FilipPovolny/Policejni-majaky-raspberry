@@ -69,3 +69,4 @@ Led pásky připravené na instalaci do auta (jen dva, protože mi dva nefunguj�
 ## Citace:
 
 [1] Adafruit guide. Online. Dostupné z: https://learn.adafruit.com/adafruit-neopixel-uberguide/the-magic-of-neopixels. [cit. 2025-01-06].
+[2] CoreElectronics. Online. Dostupné z: https://www.youtube.com/watch?v=aNlaj1r7NKc&t=334s. [cit. 2025-01-06].
